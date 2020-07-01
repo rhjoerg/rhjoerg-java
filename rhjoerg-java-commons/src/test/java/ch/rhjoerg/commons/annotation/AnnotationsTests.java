@@ -1,11 +1,13 @@
 package ch.rhjoerg.commons.annotation;
 
 import static ch.rhjoerg.commons.annotation.Annotations.annotationProxy;
+import static ch.rhjoerg.commons.annotation.Annotations.findAnnotationDetails;
 import static ch.rhjoerg.commons.annotation.Annotations.findAnnotations;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.Serializable;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
@@ -44,6 +46,16 @@ public class AnnotationsTests
 		assertEquals(2, annotations.size());
 	}
 
+	@Test
+	public void testFindAnnotationDetails()
+	{
+		List<Map.Entry<Class<?>, List<TestAnnotation>>> details = findAnnotationDetails(TestAnnotation.class, Foo.class);
+
+		assertEquals(1, details.size());
+		assertEquals(Foo.class, details.get(0).getKey());
+		assertEquals(2, details.get(0).getValue().size());
+	}
+
 	@Documented
 	@Inherited
 	@Retention(RUNTIME)
@@ -66,7 +78,8 @@ public class AnnotationsTests
 
 	@TestAnnotation(foo = "foo")
 	@TestAnnotation2
-	public static class Foo
+	public static class Foo implements Serializable
 	{
+		private static final long serialVersionUID = 1L;
 	}
 }
