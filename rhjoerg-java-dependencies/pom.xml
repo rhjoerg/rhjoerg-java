@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>ch.rhjoerg.java</groupId>
+		<artifactId>rhjoerg-java-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>rhjoerg-java-dependencies</artifactId>
+	<packaging>pom</packaging>
+	<name>rhjoerg-java-dependencies</name>
+
+	<properties>
+	
+		<!-- ch.qos.logback -->
+	
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<logback-classic.version>1.2.3</logback-classic.version>
+		
+		<!-- ch.rhjoerg -->
+		
+		<rhjoerg-java-commons.version>0.0.1-SNAPSHOT</rhjoerg-java-commons.version>
+
+		<!-- com.google.guava -->
+		
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<guava.version>29.0-jre</guava.version>
+		
+		<!-- commons-codec -->
+	
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<commons-codec.version>1.14</commons-codec.version>
+		
+		<!-- commons-collections -->
+
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<commons-collections.version>3.2.2</commons-collections.version>
+		
+		<!-- commons-digester -->
+		
+		<!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+		<commons-digester.version>1.8.1</commons-digester.version>
+		
+		<!-- commons-logging -->
+		
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<commons-logging.version>1.2</commons-logging.version>
+		
+		<!-- commons-io -->
+		
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<commons-io.version>2.7</commons-io.version>
+		
+		<!-- org.apache.commons -->
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<commons-lang3.version>3.10</commons-lang3.version>
+		
+		<!-- org.apache.velocity -->
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+		<velocity.version>1.7</velocity.version>
+		
+		<!-- org.junit.jupiter -->
+		
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+		<junit-jupiter.version>5.6.2</junit-jupiter.version>
+		
+		<!-- org.mockito -->
+		
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+		<mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
+		
+		<!-- org.slf4j -->
+		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<slf4j-api.version>1.7.30</slf4j-api.version>
+		
+		<!-- PLUGINS -->
+		
+		<!-- org.apache.maven.plugins -->
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-install-plugin -->
+		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+		
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+		
+			<!-- ch.qos.logback -->
+		
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback-classic.version}</version>
+			</dependency>
+			
+			<!-- ch.rhjoerg -->
+			
+			<dependency>
+				<groupId>ch.rhjoerg</groupId>
+				<artifactId>rhjoerg-java-commons</artifactId>
+				<version>${rhjoerg-java-commons.version}</version>
+			</dependency>
+			
+			<!-- com.google.guava -->
+		
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			
+			<!-- commons-codec -->
+
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			
+			<!-- commons-collections -->
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${commons-collections.version}</version>
+			</dependency>
+			
+			<!-- commons-digester -->
+
+			<dependency>
+				<groupId>commons-digester</groupId>
+				<artifactId>commons-digester</artifactId>
+				<version>${commons-digester.version}</version>
+			</dependency>
+			
+			<!-- commons-logging -->
+
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
+			
+			<!-- commons-io -->
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			
+			<!-- org.apache.commons -->
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			
+			<!-- org.apache.velocity -->
+			
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>${velocity.version}</version>
+			</dependency>
+			
+			<!-- org.junit.jupiter -->
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${junit-jupiter.version}</version>
+			</dependency>
+			
+			<!-- org.mockito -->
+			
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-junit-jupiter</artifactId>
+				<version>3.3.3</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<!-- org.slf4j -->
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	
+</project>
