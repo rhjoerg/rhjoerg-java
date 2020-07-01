@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>ch.rhjoerg.java</groupId>
+		<artifactId>rhjoerg-java-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../rhjoerg-java-parent</relativePath>
+	</parent>
+	
+	<artifactId>rhjoerg-java-commons</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>rhjoerg-java-commons</name>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		
+		<!-- TEST -->
+		
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+	
+	</dependencies>
+
+</project>
