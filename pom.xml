@@ -9,7 +9,7 @@
 	<artifactId>rhjoerg-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>	
-	<name>rhjoerg-java-parent</name>
+	<name>rhjoerg-java</name>
 	
 	<modules>
 		<module>rhjoerg-java-dependencies</module>
