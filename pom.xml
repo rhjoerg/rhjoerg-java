@@ -10,6 +10,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>	
 	<name>rhjoerg-java-parent</name>
+	
+	<modules>
+		<module>rhjoerg-java-dependencies</module>
+	</modules>
 		
 	<url>https://github.com/rhjoerg/rhjoerg-java</url>
 	<inceptionYear>2020</inceptionYear>
@@ -97,13 +101,13 @@
 	
 	<dependencyManagement>
 		<dependencies>
-<!-- 			<dependency> -->
-<!-- 				<groupId>ch.rhjoerg.java</groupId> -->
-<!-- 				<artifactId>rhjoerg-java-dependencies</artifactId> -->
-<!-- 				<version>0.0.1-SNAPSHOT</version> -->
-<!-- 				<type>pom</type> -->
-<!-- 				<scope>import</scope> -->
-<!-- 			</dependency> -->
+			<dependency>
+				<groupId>ch.rhjoerg.java</groupId>
+				<artifactId>rhjoerg-java-dependencies</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	

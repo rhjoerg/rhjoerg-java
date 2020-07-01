@@ -1,2 +1,1 @@
-# rhjoerg-java
-rhjoerg-java
+# rhjoerg-java-parent
