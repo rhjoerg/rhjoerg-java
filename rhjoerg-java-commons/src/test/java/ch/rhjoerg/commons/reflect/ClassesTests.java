@@ -14,10 +14,10 @@ public class ClassesTests
 	@Test
 	public void testWalkClassTree()
 	{
-		List<Class<?>> expected = List.of(Bar.class, Serializable.class, Foo.class, Serializable.class, Object.class);
+		List<Class<?>> expected = List.of(Baz.class, Bar.class, Serializable.class, Foo.class, Serializable.class, Object.class);
 		List<Class<?>> actual = new ArrayList<>();
 
-		walkClassTree(Bar.class, type -> actual.add(type));
+		walkClassTree(Baz.class, type -> actual.add(type));
 
 		assertEquals(expected, actual);
 	}
@@ -28,6 +28,11 @@ public class ClassesTests
 	}
 
 	public static class Bar extends Foo implements Serializable
+	{
+		private static final long serialVersionUID = 1L;
+	}
+
+	public static class Baz extends Bar
 	{
 		private static final long serialVersionUID = 1L;
 	}

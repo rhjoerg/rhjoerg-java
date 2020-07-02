@@ -1,7 +1,6 @@
 package ch.rhjoerg.commons.annotation;
 
 import static ch.rhjoerg.commons.annotation.Annotations.annotationProxy;
-import static ch.rhjoerg.commons.annotation.Annotations.findAnnotationDetails;
 import static ch.rhjoerg.commons.annotation.Annotations.findAnnotations;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -44,16 +43,6 @@ public class AnnotationsTests
 		List<TestAnnotation> annotations = findAnnotations(TestAnnotation.class, Foo.class);
 
 		assertEquals(2, annotations.size());
-	}
-
-	@Test
-	public void testFindAnnotationDetails()
-	{
-		List<Map.Entry<Class<?>, List<TestAnnotation>>> details = findAnnotationDetails(TestAnnotation.class, Foo.class);
-
-		assertEquals(1, details.size());
-		assertEquals(Foo.class, details.get(0).getKey());
-		assertEquals(2, details.get(0).getValue().size());
 	}
 
 	@Documented
