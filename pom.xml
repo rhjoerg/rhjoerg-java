@@ -90,6 +90,9 @@
 		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-install-plugin -->
 		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
 		
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-plugin-plugin -->
+		<maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
+		
 		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		
@@ -146,6 +149,12 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>${maven-install-plugin.version}</version>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-plugin-plugin</artifactId>
+					<version>${maven-plugin-plugin.version}</version>
 				</plugin>
 				
 				<plugin>
