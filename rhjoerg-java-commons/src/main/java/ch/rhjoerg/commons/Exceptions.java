@@ -16,4 +16,13 @@ public interface Exceptions
 
 		return new RuntimeException(t);
 	}
+
+	public static UnsupportedOperationException notYetImplemented()
+	{
+		Exception exception = new Exception();
+		StackTraceElement caller = exception.getStackTrace()[1];
+		String message = caller.getClassName() + "." + caller.getMethodName();
+
+		return new UnsupportedOperationException(message);
+	}
 }
