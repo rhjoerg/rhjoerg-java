@@ -21,7 +21,9 @@ public interface Exceptions
 	{
 		Exception exception = new Exception();
 		StackTraceElement caller = exception.getStackTrace()[1];
-		String message = caller.getClassName() + "." + caller.getMethodName();
+		String message = "not yet implemented: " + caller.getClassName() + "." + caller.getMethodName();
+
+		System.err.println(message);
 
 		return new UnsupportedOperationException(message);
 	}
