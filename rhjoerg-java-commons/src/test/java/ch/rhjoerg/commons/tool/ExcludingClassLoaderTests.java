@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 public class ExcludingClassLoaderTests
@@ -25,8 +23,7 @@ public class ExcludingClassLoaderTests
 		assertTrue(parentClassLoader.getResources(excludedName).hasMoreElements());
 		assertTrue(parentClassLoader.getResources(includedName).hasMoreElements());
 
-		List<String> exclusions = List.of(excludedName);
-		ExcludingClassLoader excludingClassLoader = new ExcludingClassLoader(parentClassLoader, exclusions);
+		ExcludingClassLoader excludingClassLoader = new ExcludingClassLoader(parentClassLoader, excludedName);
 
 		assertNull(excludingClassLoader.findResource(excludedName));
 		assertNotNull(excludingClassLoader.findResource(includedName));

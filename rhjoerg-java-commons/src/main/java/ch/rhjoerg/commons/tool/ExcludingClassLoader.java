@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.TreeSet;
 
 public class ExcludingClassLoader extends ClassLoader
@@ -18,6 +19,11 @@ public class ExcludingClassLoader extends ClassLoader
 		super(parent);
 
 		this.exclusions.addAll(exclusions);
+	}
+
+	public ExcludingClassLoader(ClassLoader parent, String... exclusions)
+	{
+		this(parent, List.of(exclusions));
 	}
 
 	@Override
