@@ -3,9 +3,9 @@ package ch.rhjoerg.commons.function;
 import static ch.rhjoerg.commons.Exceptions.toRuntimeException;
 
 @FunctionalInterface
-public interface ThrowingRunnable<E extends Throwable>
+public interface ThrowingRunnable
 {
-	public void run() throws E;
+	public void run() throws Exception;
 
 	default Runnable wrap()
 	{
@@ -15,14 +15,14 @@ public interface ThrowingRunnable<E extends Throwable>
 			{
 				run();
 			}
-			catch (Throwable e)
+			catch (Exception e)
 			{
 				throw toRuntimeException(e);
 			}
 		};
 	}
 
-	public static <E extends Throwable> Runnable wrap(ThrowingRunnable<E> delegate)
+	public static Runnable wrap(ThrowingRunnable delegate)
 	{
 		return delegate.wrap();
 	}

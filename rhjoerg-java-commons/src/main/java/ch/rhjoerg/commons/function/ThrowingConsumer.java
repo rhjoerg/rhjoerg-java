@@ -5,9 +5,18 @@ import static ch.rhjoerg.commons.Exceptions.toRuntimeException;
 import java.util.function.Consumer;
 
 @FunctionalInterface
-public interface ThrowingConsumer<T, E extends Throwable>
+public interface ThrowingConsumer<T>
 {
-	public void accept(T t) throws E;
+	public void accept(T t) throws Exception;
+
+	default ThrowingConsumer<T> andThen(ThrowingConsumer<? super T> after)
+	{
+		return (T t) ->
+		{
+			accept(t);
+			after.accept(t);
+		};
+	}
 
 	default Consumer<T> wrap()
 	{
@@ -17,14 +26,14 @@ public interface ThrowingConsumer<T, E extends Throwable>
 			{
 				accept(t);
 			}
-			catch (Throwable e)
+			catch (Exception e)
 			{
 				throw toRuntimeException(e);
 			}
 		};
 	}
 
-	public static <T, E extends Throwable> Consumer<T> wrap(ThrowingConsumer<T, E> delegate)
+	public static <T> Consumer<T> wrap(ThrowingConsumer<T> delegate)
 	{
 		return delegate.wrap();
 	}

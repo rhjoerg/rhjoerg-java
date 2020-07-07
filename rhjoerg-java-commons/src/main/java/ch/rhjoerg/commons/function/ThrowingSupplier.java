@@ -4,9 +4,9 @@ import static ch.rhjoerg.commons.Exceptions.toRuntimeException;
 
 import java.util.function.Supplier;
 
-public interface ThrowingSupplier<R, E extends Throwable>
+public interface ThrowingSupplier<R>
 {
-	public R get() throws E;
+	public R get() throws Exception;
 
 	default Supplier<R> wrap()
 	{
@@ -16,14 +16,14 @@ public interface ThrowingSupplier<R, E extends Throwable>
 			{
 				return get();
 			}
-			catch (Throwable e)
+			catch (Exception e)
 			{
 				throw toRuntimeException(e);
 			}
 		};
 	}
 
-	public static <R, E extends Throwable> Supplier<R> wrap(ThrowingSupplier<R, E> delegate)
+	public static <R> Supplier<R> wrap(ThrowingSupplier<R> delegate)
 	{
 		return delegate.wrap();
 	}
