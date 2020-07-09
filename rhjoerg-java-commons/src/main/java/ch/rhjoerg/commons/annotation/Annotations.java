@@ -11,13 +11,19 @@ import java.util.Map;
 
 public class Annotations
 {
-	public static <A extends Annotation> A annotationProxy(Class<A> annotationType, Map<String, Object> values)
+	public static <A extends Annotation> A annotationProxy(Class<A> annotationType, AnnotationHandler<A> handler)
 	{
 		ClassLoader loader = annotationType.getClassLoader();
 		Class<?>[] interfaces = { annotationType };
-		AnnotationHandler<A> handler = new AnnotationHandler<>(annotationType, values);
 
 		return annotationType.cast(newProxyInstance(loader, interfaces, handler));
+	}
+
+	public static <A extends Annotation> A annotationProxy(Class<A> annotationType, Map<String, Object> values)
+	{
+		AnnotationHandler<A> handler = new AnnotationHandler<>(annotationType, values);
+
+		return annotationProxy(annotationType, handler);
 	}
 
 	public static <A extends Annotation> List<A> findAnnotations(Class<A> annotationType, Class<?> element)
