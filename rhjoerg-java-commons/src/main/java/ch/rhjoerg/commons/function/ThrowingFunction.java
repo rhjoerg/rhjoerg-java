@@ -2,20 +2,20 @@ package ch.rhjoerg.commons.function;
 
 import static ch.rhjoerg.commons.Exceptions.toRuntimeException;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 @FunctionalInterface
-public interface ThrowingSupplier<R>
+public interface ThrowingFunction<T, R>
 {
-	public R get() throws Exception;
+	public R apply(T t) throws Exception;
 
-	default Supplier<R> wrap()
+	default Function<T, R> wrap()
 	{
-		return () ->
+		return (t) ->
 		{
 			try
 			{
-				return get();
+				return apply(t);
 			}
 			catch (Exception e)
 			{
@@ -24,7 +24,7 @@ public interface ThrowingSupplier<R>
 		};
 	}
 
-	public static <R> Supplier<R> wrap(ThrowingSupplier<R> delegate)
+	public static <T, R> Function<T, R> wrap(ThrowingFunction<T, R> delegate)
 	{
 		return delegate.wrap();
 	}
