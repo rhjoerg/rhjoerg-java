@@ -29,7 +29,7 @@
 		<!-- com.google.guava -->
 		
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-		<guava.version>29.0-jre</guava.version>
+		<guava.version>32.0.0-jre</guava.version>
 		
 		<!-- commons-codec -->
 	
